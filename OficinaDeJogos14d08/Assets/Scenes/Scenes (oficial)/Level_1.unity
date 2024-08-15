@@ -291,6 +291,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &277215318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3916578665479835046, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_Name
+      value: Pineapple_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
 --- !u!1 &378798006
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +692,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &596553059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3916578665479835046, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_Name
+      value: Pineapple_0 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
 --- !u!1 &603579556
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +849,7 @@ GameObject:
   - component: {fileID: 696839234}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,6 +1210,7 @@ GameObject:
   - component: {fileID: 921770252}
   - component: {fileID: 921770251}
   - component: {fileID: 921770253}
+  - component: {fileID: 921770254}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
@@ -2199,6 +2314,27 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!95 &921770254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921770249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61556d72ed71e934b87855779cb26941, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &972954255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,6 +3055,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1493306026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3916578665479835046, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_Name
+      value: Pineapple_0 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
 --- !u!1 &1548229521
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,6 +4453,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3750507415851434503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3916578665479835046, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_Name
+      value: Pineapple_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567510040323669111, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4268,3 +4518,7 @@ SceneRoots:
   - {fileID: 1114458857}
   - {fileID: 696839232}
   - {fileID: 972954256}
+  - {fileID: 3750507415851434503}
+  - {fileID: 1493306026}
+  - {fileID: 277215318}
+  - {fileID: 596553059}

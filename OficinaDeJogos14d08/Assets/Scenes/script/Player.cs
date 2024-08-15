@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private Rigidbody2D rig;
+    private Rigidbody2D rig;    
     public bool isJumping;
     public bool doublejump;
     private Animator anim;
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             {
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 doublejump = true;
-                anim.SetBool("jump", true);
+                anim.SetBool("Jump", true);
             }
             else
             {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             isJumping = false;  
-            anim.SetBool("jump", true);
+            anim.SetBool("Jump", false);
         }
     }
 
