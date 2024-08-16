@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     private CircleCollider2D circle;
 
     public GameObject collected;
+    public int score;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,9 @@ public class NewBehaviourScript : MonoBehaviour
             sr.enabled = false;
             circle.enabled = false;
             collected.SetActive(true);
+
+            Gamecontroller.instance.totalScore += score;
+            Gamecontroller.instance.UpdateTextMeshProUGUI();
             
             Destroy(gameObject, 0.3f);
             
