@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Fruits : MonoBehaviour
 {
     private SpriteRenderer sr;
     private CircleCollider2D circle;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8422485173116448075}
   - component: {fileID: 894065354743582088}
   - component: {fileID: 7104305054989714722}
+  - component: {fileID: 4168701996921102945}
   m_Layer: 0
   m_Name: Pineapple_0
   m_TagString: Untagged
@@ -158,6 +159,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collected: {fileID: 4626980148194473299}
   score: 10
+--- !u!114 &4168701996921102945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916578665479835046}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963e49f31c7939d478265c438d2e82b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collected: {fileID: 0}
+  score: 0
 --- !u!1001 &4071079890283106967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 8667516652875016132, guid: 193d5880cd8981c4caebb179c6fc1097, type: 3}
       propertyPath: m_Name
       value: Collected_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667516652875016132, guid: 193d5880cd8981c4caebb179c6fc1097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
