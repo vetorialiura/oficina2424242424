@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cutscene.unity
     guid: 8e8c590f6d6570840909de396446a7f9
+  - enabled: 1
+    path: Assets/Scenes/MenuInicial.unity
+    guid: 72cccb0c04509ab45ac0e26c101621c3
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

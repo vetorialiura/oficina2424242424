@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
 
 public class Gamecontroller : MonoBehaviour
 {
@@ -14,22 +12,28 @@ public class Gamecontroller : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public GameObject gameOver;
-    
-    // Start is called before the first frame update
+    public GameObject panelVitoria;
+
     void Start()
     {
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateTextMeshProUGUI()
     {
         scoreText.text = totalScore.ToString();
+
+        // 🟢 SE O SCORE FOR 80, ATIVA VITÓRIA
+        if (totalScore >= 80)
+        {
+            Time.timeScale = 0f;
+            Victory();
+        }
+    }
+
+    public void Victory()
+    {
+        panelVitoria.SetActive(true);
     }
 
     public void ShowGameOver()
@@ -39,6 +43,7 @@ public class Gamecontroller : MonoBehaviour
 
     public void RestartGame(string lvlName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(lvlName);
     }
 }

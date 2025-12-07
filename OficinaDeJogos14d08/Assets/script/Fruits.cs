@@ -12,17 +12,10 @@ public class Fruits : MonoBehaviour
     public GameObject collected;
     public int score;
     
-    // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         circle = GetComponent<CircleCollider2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -35,9 +28,11 @@ public class Fruits : MonoBehaviour
 
             Gamecontroller.instance.totalScore += score;
             Gamecontroller.instance.UpdateTextMeshProUGUI();
-            
+
+            //  ADICIONE ESTA LINHA AQUI 
+            FindObjectOfType<VictoryManager>().AddFruit();
+
             Destroy(gameObject, 0.3f);
-            
         }
     }
 }
