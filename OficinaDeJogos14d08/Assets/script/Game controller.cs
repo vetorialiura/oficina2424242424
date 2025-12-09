@@ -1,49 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Gamecontroller : MonoBehaviour
 {
-    public int totalScore;
-
     public static Gamecontroller instance;
+
+    public int totalScore;
     public TextMeshProUGUI scoreText;
 
     public GameObject gameOver;
     public GameObject panelVitoria;
 
+    void Awake()
+    {
+        // Garante que o instance existe ANTES de qualquer fruta rodar OnTriggerEnter
+        instance = this;
+    }
+
     void Start()
     {
-        instance = this;
+        UpdateTextMeshProUGUI();
     }
 
     public void UpdateTextMeshProUGUI()
     {
-        scoreText.text = totalScore.ToString();
-
-        // 🟢 SE O SCORE FOR 80, ATIVA VITÓRIA
-        if (totalScore >= 80)
-        {
-            Time.timeScale = 0f;
-            Victory();
-        }
-    }
-
-    public void Victory()
-    {
-        panelVitoria.SetActive(true);
+        if (scoreText != null)
+            scoreText.text = totalScore.ToString();
+        else
+            Debug.LogError("ScoreText não está atribuído no Gamecontroller da cena!");
     }
 
     public void ShowGameOver()
     {
-        gameOver.SetActive(true);
+        if (gameOver != null)
+            gameOver.SetActive(true);
     }
 
-    public void RestartGame(string lvlName)
+    public void ShowVictory()
+    {
+        if (panelVitoria != null)
+        {
+            panelVitoria.SetActive(true);
+            Time.timeScale = 0f; // opcional, só se quiser pausar ao vencer
+        }
+    }
+
+    public void GoToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(lvlName);
+        SceneManager.LoadScene("Menu");
     }
 }
