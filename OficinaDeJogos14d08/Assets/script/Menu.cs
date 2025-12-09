@@ -5,6 +5,6 @@ public class MenuButtons : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene("Level_2");
     }
 }
