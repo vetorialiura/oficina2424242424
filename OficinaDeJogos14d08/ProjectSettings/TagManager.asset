@@ -6,6 +6,7 @@ TagManager:
   tags:
   - spike
   - fruit
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX

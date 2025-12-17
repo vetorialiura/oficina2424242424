@@ -45,6 +45,10 @@ public class Gamecontroller : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log($"========== [Gamecontroller] OnSceneLoaded CHAMADO! Cena: {scene.name} ==========");
+        
+        Debug.Log($"[Gamecontroller] Cena carregada: {scene.name}");
+    
         // Se scoreText não estiver atribuído, tenta encontrar automaticamente
         if (scoreText == null)
         {
@@ -74,6 +78,24 @@ public class Gamecontroller : MonoBehaviour
                 }
             }
         }
+    
+        // Re-encontra painel GameOver sempre que a cena carregar
+        gameOver = GameObject.FindGameObjectWithTag("GameOverPanel");
+        if (gameOver != null)
+        {
+            Debug.Log("[Gamecontroller] GameOver panel re-encontrado!");
+        }
+        else
+        {
+            Debug.LogWarning($"[Gamecontroller] GameOver panel não encontrado na cena {scene.name}");
+        }
+    
+        // Re-encontra painel Vitória
+        panelVitoria = GameObject.Find("PanelVitoria");
+        if (panelVitoria != null)
+        {
+            Debug.Log("[Gamecontroller] PanelVitoria re-encontrado!");
+        }
 
         // Atualiza a UI após carregar cena
         UpdateTextMeshProUGUI();
@@ -98,13 +120,62 @@ public class Gamecontroller : MonoBehaviour
     }
 
     public void ShowGameOver()
-    {
-        // Dispara evento Observer
-        GameEvents.TriggerGameOver();
+{
+    Debug.Log("========== SHOWGAMEOVER INICIADO ==========");
     
+    // Re-encontra se necessário
+    if (gameOver == null)
+    {
+        Debug.LogWarning("[Gamecontroller] gameOver NULL! Buscando...");
+        gameOver = GameObject.Find("GameOver");
+        
         if (gameOver != null)
-            gameOver.SetActive(true);
+            Debug.Log($"✅ Encontrado: {gameOver.name}");
+        else
+            Debug.LogError("❌ NÃO ENCONTRADO!");
     }
+    
+    GameEvents.TriggerGameOver();
+
+    if (gameOver != null)
+    {
+        // ANTES
+        Debug.Log($"🔵 ANTES: activeSelf={gameOver.activeSelf} | activeInHierarchy={gameOver.activeInHierarchy}");
+        Debug.Log($"🔵 Pai: {(gameOver.transform.parent != null ? gameOver.transform.parent.name : "SEM PAI")}");
+        Debug.Log($"🔵 Posição hierarquia: {gameOver.transform.GetSiblingIndex()}");
+        
+        // Se o pai estiver inativo, o filho nunca aparece!
+        if (gameOver.transform.parent != null && !gameOver.transform.parent.gameObject.activeSelf)
+        {
+            Debug.LogError($"❌❌❌ O PAI '{gameOver.transform.parent.name}' ESTÁ INATIVO! ❌❌❌");
+        }
+        
+        // ATIVA
+        gameOver.SetActive(true);
+        gameOver.transform.SetAsLastSibling();
+        Time.timeScale = 0f;
+        
+        // DEPOIS
+        Debug.Log($"🟢 DEPOIS: activeSelf={gameOver.activeSelf} | activeInHierarchy={gameOver.activeInHierarchy}");
+        
+        // Verifica componentes visuais
+        var canvas = gameOver.GetComponentInParent<Canvas>();
+        Debug.Log($"Canvas pai: {(canvas != null ? canvas.name + " (ativo: " + canvas.enabled + ")" : "NÃO ENCONTRADO")}");
+        
+        var image = gameOver.GetComponent<UnityEngine.UI.Image>();
+        Debug.Log($"Image: {(image != null ? "encontrada (enabled: " + image.enabled + ")" : "NÃO TEM")}");
+        
+        var canvasGroup = gameOver.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+            Debug.Log($"⚠️ CanvasGroup: alpha={canvasGroup.alpha} | interactable={canvasGroup.interactable}");
+        
+        Debug.Log("========== SHOWGAMEOVER CONCLUÍDO ==========");
+    }
+    else
+    {
+        Debug.LogError("❌❌❌ gameOver É NULO! ❌❌❌");
+    }
+}
 
     public void ShowVictory()
     {

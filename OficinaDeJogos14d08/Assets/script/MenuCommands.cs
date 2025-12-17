@@ -20,6 +20,13 @@ public class PlayCommand : ICommand
     public void Execute()
     {
         Debug.Log($"[PlayCommand] Carregando: {sceneName}");
+        
+        // Reseta as mortes ao iniciar um novo jogo
+        if (SaveSystem.instance != null)
+        {
+            SaveSystem.instance.ResetDeaths();
+        }
+        
         SceneManager.LoadScene(sceneName);
     }
 }

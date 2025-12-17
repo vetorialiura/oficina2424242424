@@ -101,4 +101,12 @@ public class SaveSystem : MonoBehaviour
         SaveGame();
         Debug.Log("[SaveSystem] Estatísticas resetadas!");
     }
+    
+    // Reseta apenas as mortes (mantém high score)
+    public void ResetDeaths()
+    {
+        currentStats.totalDeaths = 0;
+        SaveGame();
+        Debug.Log("[SaveSystem] Mortes resetadas para nova partida!");
+    }
 }
