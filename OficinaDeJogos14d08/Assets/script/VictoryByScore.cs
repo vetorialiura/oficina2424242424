@@ -3,60 +3,43 @@ using UnityEngine.SceneManagement;
 
 public class VictoryByScore : MonoBehaviour
 {
-    [Tooltip("Painel que será mostrado quando o score alcançar targetScore.")]
-    public GameObject victoryPanel;
-
+    [Tooltip("Nome da cena de vitória que será carregada.")]
+    public string victorySceneName = "VictoryScene";
+    
     [Tooltip("Score alvo para vencer (ex: 40).")]
     public int targetScore = 40;
-
-    [Tooltip("Se true, pausa o jogo quando abrir o painel.")]
-    public bool pauseOnVictory = true;
-
-    [Tooltip("Nome da cena do menu para onde voltar.")]
-    public string menuSceneName = "MenuInicial";
-
-    bool victoryShown = false;
-
-    void Start()
-    {
-        if (victoryPanel != null)
-            victoryPanel.SetActive(false);
-        else
-            Debug.LogWarning("VictoryByScore: victoryPanel não atribuído no inspector.");
-    }
+    
+    bool victoryTriggered = false;
 
     void Update()
     {
-        if (victoryShown) return;
+        if (victoryTriggered) return;
+        
         if (Gamecontroller.instance == null) return;
-
+        
         if (Gamecontroller.instance.totalScore >= targetScore)
         {
-            ShowVictory();
+            LoadVictoryScene();
         }
     }
 
-    public void ShowVictory()
+    public void LoadVictoryScene()
     {
-        if (victoryShown) return;
-        victoryShown = true;
-
-        if (victoryPanel != null)
-            victoryPanel.SetActive(true);
-
-        if (pauseOnVictory)
-            Time.timeScale = 0f;
-    }
-
-    public void GoToMenu()
-    {
-        ICommand menuCommand = new MenuCommand(menuSceneName);
-        menuCommand.Execute();
-    }
-
-    public void RestartLevel()
-    {
-        ICommand restartCommand = new RestartCommand();
-        restartCommand.Execute();
+        if (victoryTriggered) return;
+        
+        victoryTriggered = true;
+        
+        Debug.Log("[VictoryByScore] Carregando cena de vitória: " + victorySceneName);
+        
+        // Reseta o timeScale antes de carregar a cena
+        Time.timeScale = 1f;
+        
+        if (string.IsNullOrEmpty(victorySceneName))
+        {
+            Debug.LogError("[VictoryByScore] victorySceneName está vazio. Defina o nome da cena no Inspector.");
+            return;
+        }
+        
+        SceneManager.LoadScene(victorySceneName);
     }
 }

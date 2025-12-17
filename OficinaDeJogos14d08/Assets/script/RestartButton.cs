@@ -10,7 +10,10 @@ public class RestartButton : MonoBehaviour
         {
             btn.onClick.AddListener(() => {
                 Debug.Log("BOTÃO RESTART CLICADO!");
-                FindObjectOfType<VictoryByScore>()?.RestartLevel();
+                
+                // Usando comando para reiniciar o nível
+                ICommand restartCommand = new RestartCommand();
+                restartCommand.Execute();
             });
         }
         else

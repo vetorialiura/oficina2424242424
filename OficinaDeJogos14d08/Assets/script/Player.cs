@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // ADICIONE ESTA LINHA
 
 public class Player : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private Rigidbody2D rig;    
+    private Rigidbody2D rig;
+    
     public bool isJumping;
     public bool doublejump;
     private Animator anim;
@@ -40,7 +42,6 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("walk", true);
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
-
         }
         if (Input.GetAxis("Horizontal") == 0f)
         {
@@ -66,7 +67,6 @@ public class Player : MonoBehaviour
                     doublejump = false;
                 }
             }
-            
         }
     }
 
@@ -74,9 +74,10 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            isJumping = false;  
+            isJumping = false;
             anim.SetBool("Jump", false);
         }
+        
         if (collision.gameObject.tag == "spike")
         {
             // Registra a morte no sistema de save
@@ -84,9 +85,9 @@ public class Player : MonoBehaviour
             {
                 SaveSystem.instance.AddDeath();
             }
-    
-            Gamecontroller.instance.ShowGameOver();
-            Destroy(gameObject);
+            
+            // CARREGA A CENA DE GAME OVER
+            StartCoroutine(LoadGameOverScene());
         }
     }
 
@@ -97,6 +98,14 @@ public class Player : MonoBehaviour
             isJumping = true;
         }
     }
+    
+    // ADICIONE ESTA FUNÇÃO
+    IEnumerator LoadGameOverScene()
+    {
+        // Opcional: pequeno delay antes de carregar a cena
+        yield return new WaitForSeconds(0.5f);
+        
+        // Carrega a cena de Game Over (troque "GameOver" pelo nome da sua cena)
+        SceneManager.LoadScene("CUTSCENE - Derrota");
+    }
 }
-
-

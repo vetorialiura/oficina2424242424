@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuInicial.unity
     guid: 72cccb0c04509ab45ac0e26c101621c3
+  - enabled: 1
+    path: Assets/Scenes/CUTSCENE - Derrota.unity
+    guid: 55aa51a867550b94988772d199dfc941
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
