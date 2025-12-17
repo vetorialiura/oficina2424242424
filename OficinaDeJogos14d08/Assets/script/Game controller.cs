@@ -26,7 +26,7 @@ public class Gamecontroller : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // ← Persiste entre cenas
 
         // Re-aponta referências quando uma cena é carregada
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -84,7 +84,9 @@ public class Gamecontroller : MonoBehaviour
     {
         totalScore += amount;
         Debug.Log($"[Gamecontroller] AddScore: +{amount} -> totalScore = {totalScore}");
-        UpdateTextMeshProUGUI();
+    
+        // Dispara evento Observer
+        GameEvents.TriggerScoreChanged(totalScore);
     }
 
     public void UpdateTextMeshProUGUI()
@@ -97,12 +99,18 @@ public class Gamecontroller : MonoBehaviour
 
     public void ShowGameOver()
     {
+        // Dispara evento Observer
+        GameEvents.TriggerGameOver();
+    
         if (gameOver != null)
             gameOver.SetActive(true);
     }
 
     public void ShowVictory()
     {
+        // Dispara evento Observer
+        GameEvents.TriggerVictory();
+    
         if (panelVitoria != null)
         {
             panelVitoria.SetActive(true);

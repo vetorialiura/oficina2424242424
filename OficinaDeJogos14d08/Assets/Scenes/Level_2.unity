@@ -815,7 +815,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7104305054989714722, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: fruitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 50f8015c055014c48a603a6a3e9a3f5e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 4168701996921102945, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1281,6 +1286,7 @@ GameObject:
   - component: {fileID: 308274781}
   - component: {fileID: 308274780}
   - component: {fileID: 308274779}
+  - component: {fileID: 308274783}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1372,6 +1378,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &308274783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308274778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c193419f845394cb426a6a90e78338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 822935737}
 --- !u!4 &316925281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3705821263684188941, guid: 08243dd867f7a4242b4e336dd9fd33e7, type: 3}
@@ -1936,7 +1955,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7104305054989714722, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: fruitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 50f8015c055014c48a603a6a3e9a3f5e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 4168701996921102945, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9526,7 +9550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &968285022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11230,7 +11254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1412791737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11250,7 +11274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0007019043, y: -0.00022888184}
+  m_AnchoredPosition: {x: 0.0007324219, y: -0.00024414062}
   m_SizeDelta: {x: 405.43, y: 228.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412791738
@@ -11481,7 +11505,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7104305054989714722, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: fruitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 50f8015c055014c48a603a6a3e9a3f5e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 4168701996921102945, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14665,7 +14694,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7104305054989714722, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
+      propertyPath: fruitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 50f8015c055014c48a603a6a3e9a3f5e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 4168701996921102945, guid: 97c8ace51f2239d4fa7b7c5be4a22588, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
