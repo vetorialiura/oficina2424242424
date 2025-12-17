@@ -79,6 +79,12 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "spike")
         {
+            // Registra a morte no sistema de save
+            if (SaveSystem.instance != null)
+            {
+                SaveSystem.instance.AddDeath();
+            }
+    
             Gamecontroller.instance.ShowGameOver();
             Destroy(gameObject);
         }
