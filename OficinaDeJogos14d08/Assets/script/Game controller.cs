@@ -3,6 +3,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Controlador principal do jogo usando Singleton Pattern
+/// Gerencia score, UI e estados do jogo
+/// ATUALIZADO: Agora dispara eventos do Observer Pattern
+/// </summary>
 public class Gamecontroller : MonoBehaviour
 {
     public static Gamecontroller instance;
@@ -64,9 +69,10 @@ public class Gamecontroller : MonoBehaviour
             }
 
             // 2) fallback: procura primeiro TextMeshProUGUI na cena
+            // CORRIGIDO: Usando FindFirstObjectByType em vez de FindObjectOfType (deprecated)
             if (scoreText == null)
             {
-                var found = FindObjectOfType<TextMeshProUGUI>();
+                var found = FindFirstObjectByType<TextMeshProUGUI>();
                 if (found != null)
                 {
                     scoreText = found;
@@ -79,30 +85,59 @@ public class Gamecontroller : MonoBehaviour
         UpdateTextMeshProUGUI();
     }
 
-    // Centraliza incremento de pontos e loga para debugar
+    // ==========================================
+    // ATUALIZADO: Agora dispara evento Observer
+    // ==========================================
+    /// <summary>
+    /// Adiciona pontos e notifica todos os Observers
+    /// </summary>
     public void AddScore(int amount)
     {
         totalScore += amount;
         Debug.Log($"[Gamecontroller] AddScore: +{amount} -> totalScore = {totalScore}");
+        
         UpdateTextMeshProUGUI();
+        
+        // 🔔 DISPARAR EVENTO OBSERVER
+        // Esta linha notifica todos os Observers inscritos
+        GameEvents.TriggerScoreChanged(totalScore);
     }
 
     public void UpdateTextMeshProUGUI()
     {
-        if (scoreText != null)
-            scoreText.text = totalScore.ToString();
-        else
-            Debug.LogWarning("[Gamecontroller] scoreText é nulo — UI não atualizada. Verifique se o objeto de texto existe na cena ou atribua manualmente no inspector.");
+        //if (scoreText != null)
+        //    scoreText.text = totalScore.ToString();
+        //else
+        //    Debug.LogWarning("[Gamecontroller] scoreText é nulo — UI não atualizada. Verifique se o objeto de texto existe na cena ou atribua manualmente no inspector.");
     }
 
+    // ==========================================
+    // ATUALIZADO: Agora dispara evento Observer
+    // ==========================================
+    /// <summary>
+    /// Mostra tela de Game Over e notifica Observers
+    /// </summary>
     public void ShowGameOver()
     {
+        // 🔔 DISPARAR EVENTO OBSERVER
+        GameEvents.TriggerGameOver();
+        
+        // UI antiga (mantém compatibilidade)
         if (gameOver != null)
             gameOver.SetActive(true);
     }
 
+    // ==========================================
+    // ATUALIZADO: Agora dispara evento Observer
+    // ==========================================
+    /// <summary>
+    /// Mostra tela de Vitória e notifica Observers
+    /// </summary>
     public void ShowVictory()
     {
+        // 🔔 DISPARAR EVENTO OBSERVER
+        GameEvents.TriggerVictory();
+        
         if (panelVitoria != null)
         {
             panelVitoria.SetActive(true);
@@ -116,6 +151,9 @@ public class Gamecontroller : MonoBehaviour
         totalScore = 0;
         Debug.Log("[Gamecontroller] ResetScore chamado -> totalScore = 0");
         UpdateTextMeshProUGUI();
+        
+        // Dispara evento para atualizar Observers
+        GameEvents.TriggerScoreChanged(totalScore);
     }
 
     public void RestartAndResetScore()

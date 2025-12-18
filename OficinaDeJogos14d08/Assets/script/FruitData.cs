@@ -1,27 +1,26 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewFruit", menuName = "Game/Fruit Data")]
+/// <summary>
+/// Scriptable Object para dados de frutas
+/// Permite configurar diferentes tipos de frutas sem modificar código
+/// </summary>
+[CreateAssetMenu(fileName = "New Fruit Data", menuName = "Game/Fruit Data")]
 public class FruitData : ScriptableObject
 {
-    [Header("Informações da Fruta")]
-    public string fruitName = "Apple";
+    [Header("Fruit Information")]
+    [Tooltip("Nome da fruta")]
+    public string fruitName;
     
-    [Header("Gameplay")]
-    [Tooltip("Pontos que esta fruta dá ao ser coletada")]
-    public int scoreValue = 10;
+    [Tooltip("Pontuação que a fruta dá ao ser coletada")]
+    public int scoreValue;
     
-    [Header("Visual")]
-    [Tooltip("Sprite principal da fruta")]
+    [Tooltip("Sprite visual da fruta")]
     public Sprite fruitSprite;
     
-    [Tooltip("Prefab do efeito de coleta (partículas, animação, etc)")]
-    public GameObject collectedEffectPrefab;
+    [Header("Visual Effects")]
+    [Tooltip("Cor das partículas ao coletar")]
+    public Color particleColor = Color.white;
     
-    [Header("Som (Opcional)")]
-    [Tooltip("Áudio ao coletar a fruta")]
-    public AudioClip collectSound;
-    
-    [Header("Configurações Extras")]
-    [Tooltip("Tempo antes de destruir o objeto após coleta")]
-    public float destroyDelay = 0.3f;
+    [Tooltip("Efeito visual opcional ao coletar")]
+    public GameObject collectEffect;
 }

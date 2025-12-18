@@ -1,48 +1,58 @@
 using UnityEngine;
 
+/// <summary>
+/// Script de coleta de frutas usando Scriptable Object
+/// Quando o player coleta, DISPARA um evento (Observer Pattern)
+/// </summary>
 public class Fruits : MonoBehaviour
 {
-    private SpriteRenderer sr;
-    private CircleCollider2D circle;
+    [Header("Fruit Configuration")]
+    [SerializeField] private FruitData fruitData;
 
-    public GameObject collected;   // Pode estar vazio sem causar erro
-    public int score = 10;
+    [Header("Effects")]
+    [SerializeField] private GameObject collected;
+    [SerializeField] private int totalFruits;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        circle = GetComponent<CircleCollider2D>();
+        // Validação do Scriptable Object
+        if (fruitData == null)
+        {
+            Debug.LogError("[Fruits] FruitData não atribuído no Inspector! Adicione um Scriptable Object.");
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    /// <summary>
+    /// Detecta colisão com o player
+    /// </summary>
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.gameObject.tag == "Player")
         {
-            // Esconder sprite e desativar collider
-            sr.enabled = false;
-            circle.enabled = false;
+            // Verifica se o fruitData está configurado
+            if (fruitData == null)
+            {
+                Debug.LogError("[Fruits] Não é possível coletar fruta sem FruitData!");
+                return;
+            }
 
-            // Ativar efeito se existir
+            // Log da coleta
+            Debug.Log($"[Fruits] Coletou {fruitData.fruitName}: +{fruitData.scoreValue} pontos");
+
+            // DISPARA O EVENTO - ScoreUI vai escutar!
+            GameEvents.TriggerFruitCollected(fruitData.fruitName, fruitData.scoreValue);
+
+            // Incrementa contador de frutas
+            totalFruits++;
+
+            // Efeito visual de coleta (se configurado)
             if (collected != null)
-                collected.SetActive(true);
-
-            // Atualizar score com proteção completa
-            if (Gamecontroller.instance != null)
             {
-                Gamecontroller.instance.totalScore += score;
-                Gamecontroller.instance.UpdateTextMeshProUGUI();
-
-                // Vitória ao alcançar 80 pontos
-                if (Gamecontroller.instance.totalScore >= 80)
-                    Gamecontroller.instance.ShowVictory();
-            }
-            else
-            {
-                Debug.LogError("Gamecontroller.instance está nulo! Verifique se existe Gamecontroller na cena.");
+                Instantiate(collected, transform.position, transform.rotation);
             }
 
-            // Destruir fruta depois
-            Destroy(gameObject, 0.3f);
+            // Destrói a fruta
+            Destroy(gameObject);
         }
     }
 }
