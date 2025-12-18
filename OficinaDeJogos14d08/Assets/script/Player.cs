@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // ADICIONE ESTA LINHA
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,14 +14,15 @@ public class Player : MonoBehaviour
     public bool doublejump;
     private Animator anim;
     
-    // Start is called before the first frame update
+    // === ADICIONE ESTA VARIÁVEL ===
+    private bool isDead = false; // Previne múltiplas mortes
+    
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -80,6 +81,15 @@ public class Player : MonoBehaviour
         
         if (collision.gameObject.tag == "spike")
         {
+            // === PROTEÇÃO: SÓ MORRE UMA VEZ ===
+            if (isDead) return; // Já morreu, ignora
+            isDead = true; // Marca como morto
+            
+            Debug.Log("[Player] MORREU NOS ESPINHOS!");
+            
+            // DISPARA O EVENTO - LivesUI vai escutar!
+            GameEvents.TriggerPlayerDied();
+            
             // Registra a morte no sistema de save
             if (SaveSystem.instance != null)
             {
@@ -99,13 +109,12 @@ public class Player : MonoBehaviour
         }
     }
     
-    // ADICIONE ESTA FUNÇÃO
     IEnumerator LoadGameOverScene()
     {
         // Opcional: pequeno delay antes de carregar a cena
         yield return new WaitForSeconds(0.5f);
         
-        // Carrega a cena de Game Over (troque "GameOver" pelo nome da sua cena)
+        // Carrega a cena de Game Over
         SceneManager.LoadScene("CUTSCENE - Derrota");
     }
 }
